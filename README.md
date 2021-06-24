@@ -1,12 +1,9 @@
 <h1  align="center">Countries</h1>
 
-<p align="center">Projeto <strong>Countries</strong></p>
-
 Lista os países, faz busca por nome do país e informa detalhes.
 
-![Image](/src/assets/screenshot.png)
-
 > **Objetivo**: Praticar o conhecimento em ReactJS consumindo informações de API externa (GraphQL) utilizando Apollo Client.
+
 
 ## 🚀 Instalação e execução
 
