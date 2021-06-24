@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +12,98 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country {
+  background-color: #B2EBF2;
+
+  padding: 1rem 0;
+  margin: 1rem 1%;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  flex: 1 1 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.country.search {
+  background-color: #607d8b;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-search {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.input-search span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: 1px solid #2196F3;
+  height: 34px;
+  padding: 0 1rem;
+  margin-left: 1rem;
+}
+
+button, a {
+  background-color: #2196F3;
+  color: #FFF;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 1rem;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+  text-align: center;
+  transition: all .5s ease;
+}
+button:hover, a:hover {
+  background-color: blueviolet;
+}
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+}
+
+.details p {
+  margin: .5rem;
+}
+
+@media (max-width: 768px) {
+  .country {
+    flex: 1 1 48%;
+  }
+}
+
+@media (max-width: 375px) {
+  .country {
+    flex: 1 1 98%;
+  }
+
+  .input-search {
+    font-size: .9rem;
+  }
+  .input-search span input {
+    width: 150px;
+  }
 }

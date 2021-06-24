@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { client } from './config/client-graphql';
+import { ApolloProvider } from '@apollo/client';
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import Home from "./components/Home";
+import Country from "./components/Country";
+
+import CountriesContextProvider from './hooks/CountriesContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <CountriesContextProvider>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/country/:id" component={Country} />
+          </Switch>
+        </BrowserRouter>
+      </CountriesContextProvider>
+    </ApolloProvider>
   );
 }
 
